@@ -35,27 +35,27 @@ $autos = $controller->getImages(); // Reutilizamos el mismo método para la secc
 
     <!-- Slider -->
     <div id="slider" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <?php
-        $isFirst = true;
-        foreach ($imagenes as $imagen): ?>
-            <div class="carousel-item <?= $isFirst ? 'active' : ''; ?>">
-                <img src="/WEB_PAGE_CAR/<?= htmlspecialchars($imagen['foto']); ?>" class="d-block w-100" alt="Imagen">
-                <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-inner">
+            <?php
+            $isFirst = true;
+            foreach ($imagenes as $imagen): ?>
+                <div class="carousel-item <?= $isFirst ? 'active' : ''; ?>">
+                    <img src="/WEB_PAGE_CAR/<?= htmlspecialchars($imagen['foto']); ?>" class="d-block w-100" alt="Imagen">
+                    <div class="carousel-caption d-none d-md-block">
+                    </div>
                 </div>
-            </div>
-            <?php $isFirst = false; ?>
-        <?php endforeach; ?>
+                <?php $isFirst = false; ?>
+            <?php endforeach; ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-    </button>
-</div>
     <!-- Sección de Cards de Autos -->
     <section class="container my-5">
         <h2 class="text-center mb-4">Autos Disponibles</h2>
@@ -71,7 +71,8 @@ $autos = $controller->getImages(); // Reutilizamos el mismo método para la secc
                                 data-descripcion="<?= htmlspecialchars($auto['description']); ?>">
                                 Agendar Prueba
                             </button>
-                            <a href="detalle_auto.php?id=<?= $auto['id_img']; ?>" class="btn btn-secondary">Ver Más</a>
+                            <a href="detalle_auto.php?id=<?php echo $auto['id_img']; ?>" class="btn btn-secondary">Ver
+                                Más</a>
                         </div>
                     </div>
                 </div>
@@ -80,11 +81,12 @@ $autos = $controller->getImages(); // Reutilizamos el mismo método para la secc
     </section>
 
     <!-- Modal para Agendar Prueba -->
+
     <div class="modal fade" id="modalAgendarPrueba" tabindex="-1" aria-labelledby="modalAgendarPruebaLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="formAgendarPrueba" action="agendar_prueba.php" method="POST">
+                <form id="formAgendarPrueba" action="../Controlador/agendar_prueba.php" method="POST">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalAgendarPruebaLabel">Agendar Prueba</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -112,6 +114,7 @@ $autos = $controller->getImages(); // Reutilizamos el mismo método para la secc
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary">Agendar</button>
                     </div>
+                    
                 </form>
             </div>
         </div>
