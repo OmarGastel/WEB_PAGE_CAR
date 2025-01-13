@@ -11,6 +11,13 @@ $imagenes = $imagenModel->obtenerTodos();
     <title>CRUD IMG</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<header class="text-center py-3 bg-dark text-white">
+        <div class="d-flex justify-content-between align-items-center container">
+            <h1>Bienvenido a Autocar</h1>
+            <a href="index.php" class="btn btn-primary">Inicio</a>
+        </div>
+        <p>Explora nuestros vehículos destacados</p>
+    </header>
 <body>
     <h1 class="text-center text-secondary fw-bold p-4">PANEL DEL ADMINISTRADOR AUTOCAR</h1>
     <a href="registrar.php" class="btn btn-primary mb-3">Registrar Imagen</a>
@@ -29,8 +36,9 @@ $imagenes = $imagenModel->obtenerTodos();
                 <tr>
                     <td><?= $row->id_img ?></td>
                     <td><img src="../<?= htmlspecialchars($row->foto) ?>" alt="Imagen" style="width:100px;"></td>
-                    <td><?= htmlspecialchars($row->description) ?></td>
+                    <td><?= htmlspecialchars(string: $row->description) ?></td>
                     <td><?= number_format($row->price, 2) ?> €</td>
+
                     <td>
                         <a href="editar.php?id=<?= $row->id_img ?>" class="btn btn-warning btn-sm">Editar</a>
                         <a href="../Controlador/EliminarController.php?id=<?= $row->id_img ?>" class="btn btn-danger btn-sm">Eliminar</a>
