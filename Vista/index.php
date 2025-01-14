@@ -125,7 +125,12 @@ $autos = $controller->getImages(); // Reutilizamos el mismo método para la secc
     <!-- Botón para ir al CRUD -->
     <div class="text-center my-5">
         <a href="crud.php" class="btn btn-success btn-lg">Ir al Panel de Administración (CRUD)</a>
+        <a href="login.php" class="btn btn-success btn-lg">Login</a>
+        <a href="registro.php" class="btn btn-success btn-lg">Registro</a>
+
+
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
