@@ -1,0 +1,82 @@
+/* Estilo general para el cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Contenedor central */
+.container {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+/* Estilo para el formulario */
+form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Estilo para los inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Efecto hover para los inputs */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    outline: none;
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+/* Estilo para el botón */
+form button {
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+/* Efecto hover para el botón */
+form button:hover {
+    background: #2575fc;
+}
+
+/* Mensaje de error */
+form p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: red;
+}
