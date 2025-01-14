@@ -34,5 +34,6 @@ class Imagen {
     public function obtenerTodos() {
         return $this->conexion->query("SELECT * FROM img");
     }
+    
 }
 ?>
