@@ -12,18 +12,35 @@ class Vehiculo {
         $query = $this->conexion->prepare("INSERT INTO vehiculos (marca, modelo, anio, transmision, cilindraje, kilometraje, motor, foto) 
                                            VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $query->bind_param("ssisidss", $marca, $modelo, $anio, $transmision, $cilindraje, $kilometraje, $motor, $foto);
-        return $query->execute();
+        
+        if ($query->execute()) {
+            return true;
+        } else {
+            return false; // O puedes devolver el error con $query->error
+        }
     }
 
     public function obtenerTodos() {
-        return $this->conexion->query("SELECT * FROM vehiculos");
+        $result = $this->conexion->query("SELECT * FROM vehiculos");
+        
+        if ($result) {
+            return $result;
+        } else {
+            return false; // O manejar el error aquí
+        }
     }
 
     public function obtenerPorID($id) {
         $query = $this->conexion->prepare("SELECT * FROM vehiculos WHERE id = ?");
         $query->bind_param("i", $id);
         $query->execute();
-        return $query->get_result()->fetch_object();
+        
+        $result = $query->get_result();
+        if ($result && $result->num_rows > 0) {
+            return $result->fetch_object();
+        } else {
+            return false; // Si no se encuentra el vehículo
+        }
     }
 
     public function actualizar($id, $marca, $modelo, $anio, $transmision, $cilindraje, $kilometraje, $motor, $foto = null) {
@@ -34,12 +51,24 @@ class Vehiculo {
             $query = $this->conexion->prepare("UPDATE vehiculos SET marca = ?, modelo = ?, anio = ?, transmision = ?, cilindraje = ?, kilometraje = ?, motor = ? WHERE id = ?");
             $query->bind_param("ssisidsi", $marca, $modelo, $anio, $transmision, $cilindraje, $kilometraje, $motor, $id);
         }
-        return $query->execute();
+        
+        if ($query->execute()) {
+            return true;
+        } else {
+            return false; // O manejar el error con $query->error
+        }
     }
 
     public function eliminar($id) {
         $query = $this->conexion->prepare("DELETE FROM vehiculos WHERE id = ?");
         $query->bind_param("i", $id);
-        return $query->execute();
+        
+        if ($query->execute()) {
+            return true;
+        } else {
+            return false; // O manejar el error con $query->error
+        }
     }
+    
 }
+?>

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnLogin'])) {
 
     if ($usuario->login($email, $password)) {
         // Inicio de sesión exitoso, redirigir a la página principal (index.php)
-        header("Location: ../Vista/index.php");
+        header("Location: ../Vista/crud.php");
         exit;
     } else {
         // Redirigir al formulario con un mensaje de error

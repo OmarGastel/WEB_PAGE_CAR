@@ -1,0 +1,201 @@
+/* custom.css */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #ffffff; /* Texto principal en blanco */
+    background-color: #141e30; /* Fondo negro intenso */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff; /* Títulos en blanco */
+    margin-bottom: 15px;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    color: #bdc3c7; /* Texto secundario en gris claro */
+    margin-bottom: 15px;
+}
+
+/* Encabezado */
+header {
+    background-color: #243b55; /* Fondo azul oscuro */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    max-height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f1c40f; /* Amarillo para hover */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, #e74c3c, #141e30); /* Degradado rojo a negro */
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #f1c40f; /* Texto secundario en amarillo */
+}
+
+/* Botones */
+button, .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #e74c3c;
+    border: 2px solid #e74c3c;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #ffffff;
+    color: #e74c3c;
+    border-color: #ffffff;
+}
+
+/* Sección de Servicios */
+.services {
+    background-color: #243b55; /* Fondo azul oscuro */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services h2 {
+    color: #f1c40f; /* Amarillo */
+    margin-bottom: 40px;
+}
+
+.services .service {
+    display: inline-block;
+    width: 250px;
+    margin: 15px;
+    padding: 20px;
+    background-color: #141e30; /* Negro intenso */
+    color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.services .service:hover {
+    transform: translateY(-10px);
+}
+
+/* Pie de Página */
+footer {
+    background-color: #141e30; /* Negro intenso */
+    padding: 20px;
+    text-align: center;
+    color: #bdc3c7; /* Texto gris claro */
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #3498db; /* Azul deportivo */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f1c40f; /* Amarillo para hover */
+}
+#modalAgendarPrueba .modal-content {
+    color: #000; /* Negro */
+}
+
+/* Opcional: Ajustar colores de elementos específicos */
+#modalAgendarPrueba .modal-title {
+    color: #000; /* Título negro */
+}
+
+#modalAgendarPrueba .form-label {
+    color: #000; /* Etiquetas de formularios negras */
+}
+
+#modalAgendarPrueba .form-control {
+    color: #000; /* Texto dentro de los inputs en negro */
+     }
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .services .service {
+        width: 90%;
+    }
+    
+}
+#vehiculos .card {
+    background-color: #243b55;
+    border: none;
+    color: #ffffff;
+    transition: transform 0.2s;
+}
+
+#vehiculos .card:hover {
+    transform: scale(1.05);
+}
+
+#vehiculos .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}

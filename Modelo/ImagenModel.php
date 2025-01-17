@@ -56,9 +56,17 @@ class ImagenModel {
     }
 
     // Obtener todas las imágenes
-    public function obtenerTodos() {
+    public function obtenerTodos(): bool|mysqli_result {
         $result = $this->db->query("SELECT * FROM img");
         return $result; // Devuelve el resultado directamente
+    }
+
+    public function eliminar($id) {
+        $stmt = $this->db->prepare("DELETE FROM img WHERE id_img = ?");
+        $stmt->bind_param("i", $id);
+        $resultado = $stmt->execute();
+        $stmt->close();
+        return $resultado;
     }
 }
 ?>
